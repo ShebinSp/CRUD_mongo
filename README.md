@@ -3,11 +3,11 @@
 
 * Install mongodb in your system
 * Use command to start(in linux deb)
-        sudo systemctl start mongodb
+          sudo systemctl start mongodb
 * Check status
-        sudo systemctl status mongodb
+          sudo systemctl status mongodb
 * To access mongodb
-        mongo
+          mongo
 
 # Basic Ideas and concepts
    ---------------------
@@ -43,7 +43,7 @@
     import/exoprt, monitoring and management.
 
 # To Perform CRUD in MongoDB
-        -------------
+  ---------------------------
 * Assume you have collection named users in database mydb.
 * To switch database use 'use mydb' . If there is no database named mydb, then a database 'users' will be created with 'use'.
 
