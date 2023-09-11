@@ -38,6 +38,7 @@ func UpdateManyInCol(client *mongo.Client){
 
 	// Specify options for the operation
 	updateOperations := options.Update()
+	
 	// Perform the update for all matchting documents
 	updateResult, err := collection.UpdateMany(ctx, filter, update, updateOperations)
 	CheckError(err)

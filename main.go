@@ -40,5 +40,5 @@ func main() {
 	c.DeleteFromCollection(client)
 	c.DeleteManyCol(client)
 	c.ReadManyFromCol(client)
-	
 }
+// Read README.md
