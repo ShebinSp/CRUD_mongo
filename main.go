@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
-	c"github.com/ShebinSp/CRUD_MONGO/controllers"
+	c"github.com/ShebinSp/CRUD_mongo/controllers"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -27,5 +27,8 @@ func main() {
 	defer client.Disconnect(context.TODO())
 	fmt.Println("Connected to MongoDB")
 
-	InsertIntoDb(client)
+	c.InsertIntoCollection(client)
+	c.ReadFromCollection(client)
+	c.UpdateInCollection(client)
+	c.DeleteFromCollection(client)
 }
