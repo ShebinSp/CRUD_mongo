@@ -27,8 +27,18 @@ func main() {
 	defer client.Disconnect(context.TODO())
 	fmt.Println("Connected to MongoDB")
 
+	// Perform Single Operation
 	c.InsertIntoCollection(client)
 	c.ReadFromCollection(client)
 	c.UpdateInCollection(client)
+
+	// Perform Many Operation
+	c.InsertMany(client)
+	c.ReadManyFromCol(client)
+	c.UpdateManyInCol(client)
+	c.ReadManyFromCol(client)
 	c.DeleteFromCollection(client)
+	c.DeleteManyCol(client)
+	c.ReadManyFromCol(client)
+	
 }
