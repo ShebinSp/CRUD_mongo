@@ -1,15 +1,15 @@
-  MONGODB (basics)
--------------------
+ # MONGODB (basics)
+  -----------------
 
 * Install mongodb in your system
 * Use command to start(in linux deb)
-      sudo systemctl start mongodb
+        sudo systemctl start mongodb
 * Check status
-      sudo systemctl status mongodb
+        sudo systemctl status mongodb
 * To access mongodb
-      mongo
+        mongo
 
-* Basic Ideas and concepts
+# Basic Ideas and concepts
    ---------------------
 1.  Document-Oriented: MongoDB is a document-oriented database, which means it stores data in documents. Each document is a self-contained
     unit with its own data and schema. Documents are tipically stored in collections, which are alnaloghous to tables in relational database.
@@ -42,20 +42,20 @@
 15. Ecosystem: MongoDB has a rich ecosystem with drivers and libraries availabe for multiple programming languages, as well as tools for
     import/exoprt, monitoring and management.
 
-* To Perform CRUD in MongoDB
+# To Perform CRUD in MongoDB
         -------------
-# Assume you have collection named users in database mydb.
+* Assume you have collection named users in database mydb.
 * To switch database use 'use mydb' . If there is no database named mydb, then a database 'users' will be created with 'use'.
 
 1. Create Data:
-   # Use the insertOne() or insertMany() methods
+   * Use the insertOne() or insertMany() methods
        db.users.insertOne({
             name: "John Doe",
             age: 25,
             email: "johndoe@email.com"
        });
 
-      # insertMany()
+      * insertMany()
        db.users.insertMany([
             {name: "John Doe", age: 30},
             {name: "Doe John", age: 55},
@@ -69,21 +69,22 @@
    db.users.find({email:"johndoe@email.com"})
 
 3. Update Data:
-   # Use the updateOne() or UpdateMany() methods.
+   * Use the updateOne() or UpdateMany() methods.
    db.users.updateOne(
       { name: "John Doe" },
       { $set: {email: "john@email.com"}}
    );
 
-      # updateMany()
+      * updateMany()
       db.users.updateMany(
             {age: {$gt 30}},             # Query to find users older than 30
             {$set: {status: "senior"}}   # Update to set status to "senior"
       );
 
 
-4. # Use the deleteOne() or deleteMany() methods.
+4. Delete Data:
+   * Use the deleteOne() or deleteMany() methods.
    db.users.deleteOne({name: "John Doe"});
 
-   # deleteMany()
+   * deleteMany()
    db.users.deleteMany({status: "inactive"});   # Delete all documents where the status is "inactive".
